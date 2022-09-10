@@ -3,10 +3,11 @@ import ClippedDrawer from './Components/ClippedDrawer/ClippedDrawer';
 import SwindlesPage from './Components/SwindlesPage/SwindlesPage';
 import AlertsPage from './Components/AlertsPage/AlertsPage';
 import AboutPage from './Components/AboutPage/AboutPage';
+import { Navigate } from 'react-router-dom';
 
 const appRoutes = [
   {
-    path: '/',
+    path: '/dashboard',
     element: (
         <ClippedDrawer>
         </ClippedDrawer>
@@ -28,14 +29,18 @@ const appRoutes = [
         </ClippedDrawer>
     ),
   },
-  {
+    {
     path: '/about',
     element: (
         <ClippedDrawer>
             <AboutPage></AboutPage>
         </ClippedDrawer>
     ),
-  },
+  },  
+  {
+    path: '/',
+    element: <Navigate to="/dashboard" />,
+  }
   
 ];
 
