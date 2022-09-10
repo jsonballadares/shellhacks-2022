@@ -13,6 +13,7 @@ import { useNavigate } from 'react-router-dom'
 import PhishingIcon from '@mui/icons-material/Phishing';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import InfoIcon from '@mui/icons-material/Info';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 const drawerWidth = 240;
 
@@ -51,6 +52,12 @@ export default function ClippedDrawer({ children }) {
                     <NotificationsIcon /> 
                 </ListItemIcon>
                 <ListItemText primary={'Text Alerts'} />
+            </ListItemButton>
+            <ListItemButton onClick={() => nav('/report')}>
+                <ListItemIcon>
+                    <AddCircleIcon /> 
+                </ListItemIcon>
+                <ListItemText primary={'Report'} />
             </ListItemButton>
             <ListItemButton onClick={() => nav('/about')}>
                 <ListItemIcon>

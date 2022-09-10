@@ -4,6 +4,7 @@ import SwindlesPage from './Components/SwindlesPage/SwindlesPage';
 import AlertsPage from './Components/AlertsPage/AlertsPage';
 import AboutPage from './Components/AboutPage/AboutPage';
 import { Navigate } from 'react-router-dom';
+import ReportPage from './Components/ReportPage/ReportPage';
 
 const appRoutes = [
   {
@@ -34,6 +35,14 @@ const appRoutes = [
     element: (
         <ClippedDrawer>
             <AboutPage></AboutPage>
+        </ClippedDrawer>
+    ),
+  },  
+  {
+    path: '/report',
+    element: (
+        <ClippedDrawer>
+            <ReportPage></ReportPage>
         </ClippedDrawer>
     ),
   },  
