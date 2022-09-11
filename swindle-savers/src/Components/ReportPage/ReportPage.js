@@ -2,6 +2,8 @@ import { TextField } from "@mui/material";
 import React, { useState } from "react";
 import { Button, Paper } from "@mui/material";
 import { Container, padding } from "@mui/system";
+import { faker } from '@faker-js/faker';
+
 
 export default function ReportPage() {
   const [firstName, setFirstName] = useState("");
@@ -29,7 +31,7 @@ export default function ReportPage() {
   const onSwindlerChange = (e) => setSwindler(e.target.value);
 
   const [submit, setSubmit] = useState(false);
-
+            
   const handleSubmit = () => {
     setSubmit(true)
     makeRequest()
@@ -37,21 +39,29 @@ export default function ReportPage() {
     setSubmit(false)
   };
 
+  function randomNumber(min, max) { 
+    return Math.random() * (max - min) + min;
+  } 
+
   function makeRequest() {
     console.log('Send a request somewhere');
-    var millisecondsToWait = 3000;
-setTimeout(function() {
-    // Whatever you want to do after the wait
-}, millisecondsToWait);
     console.log({
-        "firstName": firstName,
-        "lastName": lastName,
-        "zipCode": zipCode,
-        "reporterAge": reporterAge,
-        "reporterRace": reporterRace,
-        "swindleName": swindleName,
-        "swindleDescription": swindleDescription,
-        "swindler": swindler,
+        // "firstName": firstName,
+        // "lastName": lastName,
+        // "zipCode": zipCode,
+        // "reporterAge": reporterAge,
+        // "reporterRace": reporterRace,
+        // "swindleName": swindleName,
+        // "swindleDescription": swindleDescription,
+        // "swindler": swindler,
+        "firstName": faker.name.firstName(),
+        "lastName": faker.name.lastName(),
+        "zipCode": faker.address.zipCode(),
+        "reporterAge": randomNumber(18,150),
+        "reporterRace": faker.hacker.abbreviation(),
+        "swindleName": faker.name.firstName(),
+        "swindleDescription": faker.company.bs() + " " + faker.company.catchPhrase(),
+        "swindler": faker.name.firstName(),
     })
   }
 
